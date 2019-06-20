@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="basicstruts2" extends="struts-default">
+
+		<!-- <action name="accueil">
+			<result>accueil.jsp</result>
+		</action> -->
+
+		<action name="accueil" class="forum.action.ForumAction" method="execute">
+			<result name="success">accueil.jsp</result>
+		</action>
+
+		<action name="inscription" class="forum.action.ForumAction" method="input">
+			<result name="input">inscription.jsp</result>
+		</action> 
+
+		<action name="ajouterQuestion" class="forum.action.ForumAction" method="input">
+			<result name="input">ajouterQuestion.jsp</result>
+		</action>
+
+		<action name="ajouterReponse" class="forum.action.ForumAction" method="input">
+			<result name="input">ajouterReponse.jsp</result>
+		</action>
+
+		<action name="succesPersonne" class="forum.action.ForumAction" method="executePersonne">
+			<result name="success">succes.jsp</result>
+			<result name="input">inscription.jsp</result>
+		</action>
+
+		 <action name="succesQuestion" class="forum.action.ForumAction" method="executeQuestion">
+			<result name="success">succes.jsp</result>
+			<result name="input">ajouterQuestion.jsp</result>
+		</action>
+
+		<action name="succesReponse" class="forum.action.ForumAction" method="executeReponse">
+			<result name="success">succes.jsp</result>
+			<result name="input">ajouterReponse.jsp</result>
+		</action>
+		
+		<action name="question" class="forum.action.ForumAction" method="executeAfficheQuest">
+			<result name="success">question.jsp</result>
+		</action> 
+	</package>
+
+</struts>
